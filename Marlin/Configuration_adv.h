@@ -1815,8 +1815,8 @@
  */
 #if HAS_MARLINUI_U8GLIB
 // Save many cycles by drawing a hollow frame or no frame on the Info Screen
-// #define XYZ_NO_FRAME
-#define XYZ_HOLLOW_FRAME
+#define XYZ_NO_FRAME
+// #define XYZ_HOLLOW_FRAME
 
 // A bigger font is available for edit items. Costs 3120 bytes of flash.
 // Western only. Not available for Cyrillic, Kana, Turkish, Greek, or Chinese.
@@ -1889,7 +1889,7 @@
 #endif // HAS_MARLINUI_U8GLIB
 
 #if HAS_MARLINUI_U8GLIB || IS_DWIN_MARLINUI
-#define MENU_HOLLOW_FRAME // Enable to save many cycles by drawing a hollow frame on Menu Screens
+// #define MENU_HOLLOW_FRAME // Enable to save many cycles by drawing a hollow frame on Menu Screens
 // #define OVERLAY_GFX_REVERSE       // Swap the CW/CCW indicators in the graphics overlay
 #endif
 
