@@ -1865,12 +1865,12 @@
 #define Y_BED_SIZE 235
 
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
-#define X_MIN_POS 0
-#define Y_MIN_POS 0
+#define X_MIN_POS 3.3
+#define Y_MIN_POS -3
 #define Z_MIN_POS 0
-#define X_MAX_POS X_BED_SIZE
+#define X_MAX_POS X_BED_SIZE + 15
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 250
+#define Z_MAX_POS 230
 // #define I_MIN_POS 0
 // #define I_MAX_POS 50
 // #define J_MIN_POS 0
@@ -2040,7 +2040,7 @@
  */
 // #define AUTO_BED_LEVELING_3POINT
 // #define AUTO_BED_LEVELING_LINEAR
-// #define AUTO_BED_LEVELING_BILINEAR
+#define AUTO_BED_LEVELING_BILINEAR
 // #define AUTO_BED_LEVELING_UBL
 // #define MESH_BED_LEVELING
 
@@ -2120,7 +2120,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
 // Set the number of grid points per dimension.
-#define GRID_MAX_POINTS_X 3
+#define GRID_MAX_POINTS_X 5
 #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
 // Probe along the Y axis, advancing X after each column
@@ -2130,13 +2130,13 @@
 
 // Beyond the probed grid, continue the implied tilt?
 // Default is to maintain the height of the nearest edge.
-// #define EXTRAPOLATE_BEYOND_GRID
+#define EXTRAPOLATE_BEYOND_GRID
 
 //
 // Experimental Subdivision of the grid by Catmull-Rom method.
 // Synthesizes intermediate points to produce a more detailed mesh.
 //
-// #define ABL_BILINEAR_SUBDIVISION
+#define ABL_BILINEAR_SUBDIVISION
 #if ENABLED(ABL_BILINEAR_SUBDIVISION)
 // Number of subdivisions between probe points
 #define BILINEAR_SUBDIVISIONS 3
@@ -2193,17 +2193,17 @@
 #endif
 
 // Add a menu item to move between bed corners for manual bed adjustment
-// #define LCD_BED_TRAMMING
+#define LCD_BED_TRAMMING
 
 #if ENABLED(LCD_BED_TRAMMING)
 #define BED_TRAMMING_INSET_LFRB \
   {                             \
-    30, 30, 30, 30              \
+    32.5, 32.5, 32.5, 32.5      \
   }                             // (mm) Left, Front, Right, Back insets
 #define BED_TRAMMING_HEIGHT 0.0 // (mm) Z height of nozzle at leveling points
 #define BED_TRAMMING_Z_HOP 4.0  // (mm) Z height of nozzle between leveling points
 // #define BED_TRAMMING_INCLUDE_CENTER       // Move to the center after the last corner
-// #define BED_TRAMMING_USE_PROBE
+#define BED_TRAMMING_USE_PROBE
 #if ENABLED(BED_TRAMMING_USE_PROBE)
 #define BED_TRAMMING_PROBE_TOLERANCE 0.1 // (mm)
 #define BED_TRAMMING_VERIFY_RAISED       // After adjustment triggers the probe, re-probe to verify
