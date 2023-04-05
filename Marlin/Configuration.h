@@ -2205,8 +2205,8 @@
 // #define BED_TRAMMING_INCLUDE_CENTER       // Move to the center after the last corner
 #define BED_TRAMMING_USE_PROBE
 #if ENABLED(BED_TRAMMING_USE_PROBE)
-#define BED_TRAMMING_PROBE_TOLERANCE 0.1 // (mm)
-#define BED_TRAMMING_VERIFY_RAISED       // After adjustment triggers the probe, re-probe to verify
+#define BED_TRAMMING_PROBE_TOLERANCE 0.04 // (mm)
+#define BED_TRAMMING_VERIFY_RAISED        // After adjustment triggers the probe, re-probe to verify
 // #define BED_TRAMMING_AUDIO_FEEDBACK
 #endif
 
